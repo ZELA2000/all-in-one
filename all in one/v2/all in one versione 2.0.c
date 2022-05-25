@@ -1,2 +1,0 @@
-/*
- ] Creatore: Gabriele Bovina
