@@ -5,7 +5,8 @@
  #include <stdlib.h>
  #include <process.h>
  #include <math.h>
-//variabili
+//variabili globali
+FILE * pf;
 //menu home
 int main(){
 	//variabili
@@ -60,8 +61,8 @@ int main(){
 			break;
 		case 8:
 			system("cls");
-			printf("Grazie per averci scelto.");
-			exit(EXIT_SUCCESS);
+			uscita();
+			break;
 		default:
 			system("cls");
 			main();
@@ -123,6 +124,7 @@ menu1(){
 			break;
 	}
 }
+
 //menu principale (2 . Programmi con l'ausilio del comando 'if')
 menu2(){
 	int scelta=0;
@@ -183,6 +185,7 @@ menu2(){
 			break;
 	}
 }
+
 //menu principale (3 . Programmi con l'ausilio del comando 'for')
 menu3(){
 	int scelta=0;
@@ -223,6 +226,7 @@ menu3(){
 			break;
 	}
 }
+
 //menu principale (4 . Programmi con l'ausilio dei comandi 'break')
 menu4(){
 	printf("+---------------------------------------------------------+\n");
@@ -233,6 +237,7 @@ menu4(){
 	system("cls");
 	main();
 }
+
 //menu principale (5 . Programmi con l'ausilio del comando 'switch')
 menu5(){
 	int scelta=0;
@@ -263,6 +268,7 @@ menu5(){
 			break;
 	}
 }
+
 //menu principale (6 . Programmi con l'ausilio del comando 'while')
 menu6(){
 	printf("+---------------------------------------------------------+\n");
@@ -273,6 +279,7 @@ menu6(){
 	system("cls");
 	main();
 }
+
 //menu principale (7 . Programmi con l'ausilio del comando 'do-while' )
 menu7(){
 	printf("+---------------------------------------------------------+\n");
@@ -295,15 +302,202 @@ menu7(){
 // A(1)
 //somma fra due numeri
 int a1(){
+	//programma base
+	float a=0, b=0, c=0;
+	int s1=0, s2=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|                   Somma fra due numeri                  |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il primo valore: ");
+	scanf("%f", &a);
+	printf("Inserisci il secondo valore: ");
+	scanf("%f", &b);
+	c=a+b;
+	printf("La somma fra %f e %f vale %f\n\n", a, b, c);
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|                   Somma fra due numeri                  |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il primo valore: %f\n", a);
+		fprintf(pf, "Inserisci il secondo valore: %f\n", b);
+		fprintf(pf, "La somma fra %f e %f vale %f\n", a, b, c);
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 //calcolo del quoziente fra due numeri
 int a2(){
+	//programma base
+	float a=0, b=0, c=0;
+	int s1=0, s2=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|           Calcolo del quoziente fra due numeri          |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il primo valore: ");
+	scanf("%f", &a);
+	printf("Inserisci il secondo valore: ");
+	scanf("%f", &b);
+	c=a/b;
+	printf("La divisione %f/%f da valore %f\n\n", a, b, c);
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|           Calcolo del quoziente fra due numeri          |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il primo valore: %f\n", a);
+		fprintf(pf, "Inserisci il secondo valore: %f\n", b);
+		fprintf(pf, "La divisione %f/%f da valore %f\n\n", a, b, c);
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 //calcolo della media fra 3 numeri
 int a3(){
+	//programma base
+	float a=0, b=0, c=0, media=0;
+	int s1=0, s2=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|             Calcolo della media fra 3 numeri            |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il primo valore: ");
+	scanf("%f", &a);
+	printf("Inserisci il secondo valore: ");
+	scanf("%f", &b);
+	printf("Inserisci il terzo valore: ");
+	scanf("%f", &c);
+	media=(a+b+c)/3;
+	printf("La media fra %f, %f e %f vale %f\n\n", a, b, c, media);
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|             Calcolo della media fra 3 numeri            |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il primo valore: %f\n", a);
+		fprintf(pf, "Inserisci il secondo valore: %f\n", b);
+		fprintf(pf, "Inserisci il terzo valore: %f\n", c);
+		fprintf(pf, "La media fra %f, %f e %f vale %f\n\n", a, b, c, media);
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 //calcolo area di un triangolo
 int a4(){
+	//programma base
+	float a=0, b=0, area=0;
+	int s1=0, s2=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|               Calcolo area di un triangolo              |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il valore della base: ");
+	scanf("%f", &b);
+	printf("Inserisci il valore dell'altezza: ");
+	scanf("%f", &a);
+	area=(b*a)/2;
+	printf("L'area del triangolo con base %f e altezza %f vale %f\n\n", b, a, area);
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|               Calcolo area di un triangolo              |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il valore della base: %f\n", b);
+		fprintf(pf, "Inserisci il valore dell'altezza: %f\n", a);
+		fprintf(pf, "L'area del triangolo con base %f e altezza %f vale %f\n\n", b, a, area);
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 
 //B(2)
@@ -352,3 +546,10 @@ e1(){
 
 //G(7)
 
+
+
+//exit
+uscita(){
+	printf("Grazie per averci scelto.");
+	exit(EXIT_SUCCESS);
+}
