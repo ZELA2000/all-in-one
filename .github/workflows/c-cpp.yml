@@ -1,6 +1,9 @@
 name: C/C++ CI
 
 on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 2 * * 1-5"
   push:
     branches: 
      - v1/all in one v1.c
