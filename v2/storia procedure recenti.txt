@@ -1,0 +1,65 @@
++---------------------------------------------------------+
+|                   Somma fra due numeri                  |
++---------------------------------------------------------+
+
+Inserisci il primo valore: 6.000000
+Inserisci il secondo valore: 7.500000
+La somma fra 6.000000 e 7.500000 vale 13.500000
++---------------------------------------------------------+
+|               Calcolo area di un triangolo              |
++---------------------------------------------------------+
+
+Inserisci il valore della base: 2.000000
+Inserisci il valore dell'altezza: 2.000000
+L'area del rettangolo con la base 2.000000 e l'altezza 2.000000 vale 4.000000
+
++---------------------------------------------------------+
+|               Calcolo area di un triangolo              |
++---------------------------------------------------------+
+
+Inserisci il valore della base: -9.000000
+Inserisci il valore dell'altezza: 2.000000
+I valori inseriti sono sotto a 0. :(
+base=-9.000000 altezza=2.000000+---------------------------------------------------------+
+|                Calcolo media tra 3 numeri               |
++---------------------------------------------------------+
+
+Inserisci il primo valore: 1.000000Inserisci il secondo valore: 2.000000Inserisci il terzo valore: 3.000000La media fra 1.000000, 2.000000 e 3.000000 vale 2.000000. 
+
++---------------------------------------------------------+
+|                Calcolo media tra 3 numeri               |
++---------------------------------------------------------+
+
+Inserisci il primo valore: 2.000000Inserisci il secondo valore: 3.000000Inserisci il terzo valore: 4.000000La media fra 2.000000, 3.000000 e 4.000000 vale 3.000000. 
+
++---------------------------------------------------------+
+|                Calcolo media tra 3 numeri               |
++---------------------------------------------------------+
+
+Inserisci il primo valore: 0.000000Inserisci il secondo valore: 5.000000Inserisci il terzo valore: 4.000000I valori inseriti sono sotto a 0. :(
++---------------------------------------------------------+
+|                Calcolo media tra 3 numeri               |
++---------------------------------------------------------+
+
+Inserisci il primo valore: 1.000000
+Inserisci il secondo valore: 1.000000
+Inserisci il terzo valore: 2.000000
+La media fra 1.000000, 1.000000 e 2.000000 vale 1.333333. 
+
++---------------------------------------------------------+
+|                Calcolo media tra 3 numeri               |
++---------------------------------------------------------+
+
+Inserisci il primo valore: 3.000000
+Inserisci il secondo valore: 3.000000
+Inserisci il terzo valore: 3.000000
+La media fra 3.000000, 3.000000 e 3.000000 vale 3.000000. 
+
++---------------------------------------------------------+
+|                Calcolo media tra 3 numeri               |
++---------------------------------------------------------+
+
+Inserisci il primo valore: 0.000000
+Inserisci il secondo valore: 2.000000
+Inserisci il terzo valore: 2.000000
+I valori inseriti sono sotto a 0. :(

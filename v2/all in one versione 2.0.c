@@ -503,9 +503,132 @@ int a4(){
 //B(2)
 //Calcolo area di un rettangolo
 int b1(){
+	//programma base
+	float b=0, h=0, area=0;
+	int s1=0, s2=0, caso=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|               Calcolo area di un rettangolo             |\n");
+	printf("+---------------------------------------------------------+\n");
+	printf("|  Per questo programma e' richiesto di non usare numeri  |\n");
+	printf("|                      sotto allo 0                       |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il valore della base: ");
+	scanf("%f", &b);
+	printf("Inserisci il valore dell'altezza: ");
+	scanf("%f", &h);
+	if(b>0 && h>0){
+		area=b*h;
+		printf("L'area del rettangolo con la base %f e l'altezza %f vale %f\n\n", b, h, area);		
+	}
+	else{
+		printf("I valori inseriti sono sotto a 0. :(\n\n");
+		caso=1;
+	}
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|               Calcolo area di un triangolo              |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il valore della base: %f\n", b);
+		fprintf(pf, "Inserisci il valore dell'altezza: %f\n", h);
+		if(caso==1){
+			fprintf(pf, "I valori inseriti sono sotto a 0. :(\n");
+		}
+		else{
+			fprintf(pf, "L'area del rettangolo con la base %f e l'altezza %f vale %f\n\n", b, h, area);
+		}
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 //Calcolo media tra 3 numeri (numeri sopra a 1)
 int b2(){
+	//programma base
+	float a=0, b=0, c=0, media=0;
+	int s1=0, s2=0, caso=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|                Calcolo media tra 3 numeri               |\n");
+	printf("+---------------------------------------------------------+\n");
+	printf("|  Per questo programma e' richiesto di non usare numeri  |\n");
+	printf("|                      sotto all'1                        |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il primo valore: ");
+	scanf("%f", &a);
+	printf("Inserisci il secondo valore: ");
+	scanf("%f", &b);
+	printf("Inserisci il terzo valore: ");
+	scanf("%f", &c);
+	if(a>0 && b>0 && c>1){
+		media=(a+b+c)/3;
+		printf("La media fra %f, %f e %f vale %f. \n\n", a, b, c, media);		
+	}
+	else{
+		printf("I valori inseriti sono sotto a 1. :(\n\n");
+		caso=1;
+	}
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|                Calcolo media tra 3 numeri               |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il primo valore: %f\n", a);
+		fprintf(pf, "Inserisci il secondo valore: %f\n", b);
+		fprintf(pf, "Inserisci il terzo valore: %f\n", c);
+		if(caso==1){
+			fprintf(pf, "I valori inseriti sono sotto a 0. :(\n");
+		}
+		else{
+			fprintf(pf, "La media fra %f, %f e %f vale %f. \n\n", a, b, c, media);
+		}
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 //Stampa di due numeri in ordine crescente
 int b3(){
