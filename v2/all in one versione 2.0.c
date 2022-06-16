@@ -888,18 +888,384 @@ int b6(){
 }
 //risoluzione di una equazione di secondo grado
 int b7(){
+	//programma base
+	double a=0, b=0, c=0, delta=0, x1=0, x2=0;
+	int s1=0, s2=0, caso=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|      Risoluzione di una equazione di secondo grado      |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il valore di a: ");
+	scanf("%lf", &a);
+	printf("Inserisci il valore di b: ");
+	scanf("%lf", &b);
+	printf("Inserisci il valore di c: ");
+	scanf("%lf", &c);
+	delta=(b*b)-(4*a*c);
+	if(delta<0){
+		printf("L'equazione risulta impossibile.\n\n");
+		caso=0;
+	}
+	else if(delta==0){
+		x1=(-b-sqrt(delta))/2*a;
+		printf("L'equazione risulta avere due soluzioni uguali:\n");
+		printf("x1 = %lf\n", x1);
+		printf("x2 = %lf\n", x1);
+		caso=1;
+	}
+	else{
+		x1=(-b-sqrt(delta))/2*a;
+		x2=(-b+sqrt(delta))/2*a;
+		printf("L'equazione risulta avere due soluzioni distinte:\n");
+		printf("x1 = %lf\n", x1);
+		printf("x2 = %lf\n", x2);
+		caso=2;
+	}
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|      Risoluzione di una equazione di secondo grado      |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il valore di a: %lf\n", a);
+		fprintf(pf, "Inserisci il valore di b: %lf\n", b);
+		fprintf(pf, "Inserisci il valore di c: %lf\n", c);
+		if(caso==0){
+			fprintf(pf, "L'equazione risulta impossibile.\n\n");
+		}
+		else if (caso==1){
+			fprintf(pf, "L'equazione risulta avere due soluzioni uguali:\n");
+			fprintf(pf, "x1 = %lf\n", x1);
+			fprintf(pf, "x2 = %lf\n\n", x1);
+		}
+		else if (caso==2){
+			fprintf(pf,"L'equazione risulta avere due soluzioni distinte:\n");
+			fprintf(pf,"x1 = %lf\n", x1);
+			fprintf(pf,"x2 = %lf\n", x2);
+		}
+		else{
+			printf("Impossibile eseguire il salvataggio.\n");
+		}
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 
 
 //C(3)
 //4 nuemri e scrittura solo di coloro che sono positivi
 c1(){
+	//programma base e salvataggio
+	float numero=0;
+	int s1=0, s2=0, caso=0, i=0;
+	pf= fopen("storia procedure recenti.txt", "a+");
+	printf("+---------------------------------------------------------+\n");
+	printf("|      4 numeri e scrittura solo di coloro positivi       |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	for(i=0; i<4; i++){
+		printf("Inserisci il numero. \n");
+		scanf("%f", &numero);
+		if(numero>0){
+			printf("Il valore che hai inserito e' positivo e vale %f. \n", numero);
+			caso==1;
+		}
+		else{
+			printf("Il valore %f e' negativo. \n", numero);
+		}
+		printf("Salvare?\n");
+		printf("1-Si 2-No \n");
+		scanf("%d",&s1);
+		if(s1==1){
+			switch(i){
+			case 0:
+				fprintf(pf,"+---------------------------------------------------------+\n");
+				fprintf(pf,"|      4 numeri e scrittura solo di coloro positivi       |\n");
+				fprintf(pf,"+---------------------------------------------------------+\n\n");
+			default:
+				if(caso==1){
+					fprintf(pf,"Il valore che hai inserito e' positivo e vale &f. \n",numero);
+				}
+				else{
+					fprintf(pf, "Il valore %f e' negativo. \n", numero);
+				}
+				printf("Salvataggio completato.\n\n");
+			}
+		}
+		else{
+			printf("Salvataggio non eseguito.\n\n");
+		}
+		
+	}
+	fclose(pf);
+	/*salvataggio di confronto
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|      Risoluzione di una equazione di secondo grado      |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il valore di a: %lf\n", a);
+		fprintf(pf, "Inserisci il valore di b: %lf\n", b);
+		fprintf(pf, "Inserisci il valore di c: %lf\n", c);
+		if(caso==0){
+			fprintf(pf, "L'equazione risulta impossibile.\n\n");
+		}
+		else if (caso==1){
+			fprintf(pf, "L'equazione risulta avere due soluzioni uguali:\n");
+			fprintf(pf, "x1 = %lf\n", x1);
+			fprintf(pf, "x2 = %lf\n\n", x1);
+		}
+		else if (caso==2){
+			fprintf(pf,"L'equazione risulta avere due soluzioni distinte:\n");
+			fprintf(pf,"x1 = %lf\n", x1);
+			fprintf(pf,"x2 = %lf\n", x2);
+		}
+		else{
+			printf("Impossibile eseguire il salvataggio.\n");
+		}
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	*/
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 //media di n voti
 c2(){
+	//programma base e salvataggio
+	float voto=0, somma=0, media=0;
+	int s1a=0, s1b=0, s2=0, caso=0, i=0, n=0;
+	pf= fopen("storia procedure recenti.txt", "a+");
+	printf("+---------------------------------------------------------+\n");
+	printf("|                     Media di n voti                     |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Con quanti voti deve fare la media? ");
+	scanf("%d", &n);
+	for(i=0; i<n; i++){
+		printf("Inserisci il voto. \n");
+		scanf("%f", &voto);
+		somma=somma+voto;
+		printf("Salvare il voto?\n");
+		printf("1-Si 2-No \n");
+		scanf("%d",&s1a);
+		if(s1a==1){
+			switch(i){
+			case 0:
+				fprintf(pf,"+---------------------------------------------------------+\n");
+				fprintf(pf,"|                     Media di n voti                     |\n");
+				fprintf(pf,"+---------------------------------------------------------+\n\n");
+				fprintf(pf,"Con quanti voti deve fare la media? %d\n", n);
+			default:
+				fprintf(pf, "Inserisci il voto. %f\n", voto);
+				printf("Salvataggio completato.\n\n");
+			}
+		}
+		else{
+			printf("Salvataggio non eseguito.\n\n");
+		}
+		
+	}
+	media=somma/n;
+	printf("La media dei voti vale %f. \n", media);
+	printf("Salvare la media?\n");
+	printf("1-si 2-no\n");
+	scanf("%d", &s1b);
+	if(s1b==1){
+		fprintf(pf, "La media dei voti vale %f.\n\n", media);
+		printf("Salvataggio completato.\n");
+	}
+	else{
+		printf("Salvataggio non eseguito.\n");
+	}
+	fclose(pf);
+	/*salvataggio di confronto
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|      Risoluzione di una equazione di secondo grado      |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il valore di a: %lf\n", a);
+		fprintf(pf, "Inserisci il valore di b: %lf\n", b);
+		fprintf(pf, "Inserisci il valore di c: %lf\n", c);
+		if(caso==0){
+			fprintf(pf, "L'equazione risulta impossibile.\n\n");
+		}
+		else if (caso==1){
+			fprintf(pf, "L'equazione risulta avere due soluzioni uguali:\n");
+			fprintf(pf, "x1 = %lf\n", x1);
+			fprintf(pf, "x2 = %lf\n\n", x1);
+		}
+		else if (caso==2){
+			fprintf(pf,"L'equazione risulta avere due soluzioni distinte:\n");
+			fprintf(pf,"x1 = %lf\n", x1);
+			fprintf(pf,"x2 = %lf\n", x2);
+		}
+		else{
+			printf("Impossibile eseguire il salvataggio.\n");
+		}
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	*/
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 //media di 5 voti
 c3(){
+	//programma base e salvataggio
+	float voto=0, somma=0, media=0;
+	int s1a=0, s1b=0, s2=0, caso=0, i=0;
+	pf= fopen("storia procedure recenti.txt", "a+");
+	printf("+---------------------------------------------------------+\n");
+	printf("|                     Media di 5 voti                     |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	for(i=0; i<5; i++){
+		printf("Inserisci il voto. \n");
+		scanf("%f", &voto);
+		somma=somma+voto;
+		printf("Salvare il voto?\n");
+		printf("1-Si 2-No \n");
+		scanf("%d",&s1a);
+		if(s1a==1){
+			switch(i){
+			case 0:
+				fprintf(pf,"+---------------------------------------------------------+\n");
+				fprintf(pf,"|                     Media di 5 voti                     |\n");
+				fprintf(pf,"+---------------------------------------------------------+\n\n");
+			default:
+				fprintf(pf, "Inserisci il voto. %f\n", voto);
+				printf("Salvataggio completato.\n\n");
+			}
+		}
+		else{
+			printf("Salvataggio non eseguito.\n\n");
+		}
+		
+	}
+	media=somma/5;
+	printf("La media dei voti vale %f. \n", media);
+	printf("Salvare la media?\n");
+	printf("1-si 2-no\n");
+	scanf("%d", &s1b);
+	if(s1b==1){
+		fprintf(pf, "La media dei voti vale %f.\n\n", media);
+		printf("Salvataggio completato.\n");
+	}
+	else{
+		printf("Salvataggio non eseguito.\n");
+	}
+	fclose(pf);
+	/*salvataggio di confronto
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|      Risoluzione di una equazione di secondo grado      |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il valore di a: %lf\n", a);
+		fprintf(pf, "Inserisci il valore di b: %lf\n", b);
+		fprintf(pf, "Inserisci il valore di c: %lf\n", c);
+		if(caso==0){
+			fprintf(pf, "L'equazione risulta impossibile.\n\n");
+		}
+		else if (caso==1){
+			fprintf(pf, "L'equazione risulta avere due soluzioni uguali:\n");
+			fprintf(pf, "x1 = %lf\n", x1);
+			fprintf(pf, "x2 = %lf\n\n", x1);
+		}
+		else if (caso==2){
+			fprintf(pf,"L'equazione risulta avere due soluzioni distinte:\n");
+			fprintf(pf,"x1 = %lf\n", x1);
+			fprintf(pf,"x2 = %lf\n", x2);
+		}
+		else{
+			printf("Impossibile eseguire il salvataggio.\n");
+		}
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	*/
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 
 //D(4)
@@ -907,6 +1273,61 @@ c3(){
 //E(5)
 //pari o dispari
 e1(){
+	//programma base
+	int s1=0, s2=0, caso=0, a=0, x=0;
+	printf("+---------------------------------------------------------+\n");
+	printf("|                      Pari o dispari                     |\n");
+	printf("+---------------------------------------------------------+\n\n");
+	printf("Inserisci il numero: ");
+	scanf("%d", &a);
+	x=a%2;
+	switch(x){
+		case 0:
+			printf("Il numero e' pari.\n");
+			caso=1;
+			break;
+		default:
+			printf("Il numero e' dispari.\n");
+			break;
+	}
+	//salvataggio
+	printf("***********************************************************\n\n");
+	printf("Vuoi salvare questa procedura?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s1);
+	if(s1==1){
+		pf = fopen ("storia procedure recenti.txt", "a+");
+		fprintf(pf, "+---------------------------------------------------------+\n");
+		fprintf(pf, "|                      Pari o dispari                     |\n");
+		fprintf(pf, "+---------------------------------------------------------+\n\n");
+		fprintf(pf, "Inserisci il numero: %d\n", a);
+		if(caso==1){
+			fprintf(pf, "Il numero e' pari.\n\n");
+		}
+		else{
+			fprintf(pf, "Il numero e' dispari.\n\n");
+		}
+		printf("Salvataggio completato.\n");
+		fclose(pf);
+	}
+	else {
+		printf("Salvataggio non eseguito.\n\n");
+	}
+	//tornare a home
+	printf("***********************************************************\n\n");
+	printf("Vuoi tornare al menu home?\n");
+	printf("1-si  2-no\n");
+	printf("scelta: ");
+	scanf("%d", &s2);
+	if(s2==1){
+		system("cls");
+		main();
+	}
+	else{
+		system("cls");
+		uscita();
+	}
 }
 
 //F(6)
